@@ -3,23 +3,32 @@
 
 Vagrant.configure("2") do |config|
 
-    # Box
-    config.vm.box = "scotch/box"
-    config.vm.network "private_network", ip: "192.168.33.10"
-    config.vm.hostname = "scotchbox"
+    config.hostmanager.enabled = true
+    config.hostmanager.manage_host = true
+    config.hostmanager.ignore_private_ip = false
+    config.hostmanager.include_offline = true
+    config.vm.define 'oneplayce-scotch-box' do |node|
 
-    # Sites
-    config.vm.synced_folder "./sites", "/var/sites", 
-    	:create => true, 
-    	:mount_options => ["dmode=755", "fmode=644"]
+        # Box
+        node.vm.box = "scotch/box"
+        node.vm.network "private_network", ip: "192.168.33.10"
+        node.vm.hostname = "scotchbox.le"
 
-    # Supress *stdin: is not a tty* warning
-	config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+        # Sites
+        node.vm.synced_folder "./sites", "/var/sites", 
+            :create => true, 
+            :mount_options => ["dmode=755", "fmode=644"]
 
-    # Running common provision
-    config.vm.provision "shell", path: "./provision/script.sh", keep_color: true
+        # Supress *stdin: is not a tty* warning
+        node.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
-    # OnePlayce 
-    config.vm.provision "shell", path: "./provision/oneplayce.sh", keep_color: true
+        # Running common provision
+        node.vm.provision "shell", path: "./provision/script.sh", keep_color: true
 
+        # OnePlayce 
+        node.vm.provision "shell", path: "./provision/oneplayce.sh", keep_color: true
+
+        # Setup aliases
+        node.hostmanager.aliases = %w(oneplayce.le)
+    end
 end
