@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     config.vm.hostname = "scotchbox"
 
     # Sites
-    config.vm.synced_folder "./sites", "/var/sites/default", 
+    config.vm.synced_folder "./sites", "/var/sites", 
     	:create => true, 
     	:mount_options => ["dmode=755", "fmode=644"]
 
@@ -20,6 +20,6 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", path: "./provision/script.sh", keep_color: true
 
     # OnePlayce 
-    # onfig.vm.provision "shell", path: "./provision/oneplayce.sh", keep_color: true
+    config.vm.provision "shell", path: "./provision/oneplayce.sh", keep_color: true
 
 end
