@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     config.hostmanager.manage_host = true
     config.hostmanager.ignore_private_ip = false
     config.hostmanager.include_offline = false
-    config.vm.define 'oneplayce-scotch-box' do |node|
+    config.vm.define 'oneplayce' do |node|
 
         # Box
         node.vm.box = "scotch/box"
