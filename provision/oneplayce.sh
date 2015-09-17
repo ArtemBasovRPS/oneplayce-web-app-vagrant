@@ -10,7 +10,7 @@ sudo a2ensite oneplayce.conf
 sudo service apache2 reload
 
 # Install composer packages
-sudo composer global require "fxp/composer-asset-plugin:1.0.1" --no-progress
+sudo composer global require "fxp/composer-asset-plugin:~1.0.3" --no-progress
 sudo composer install --prefer-dist --no-progress --no-interaction --working-dir /var/sites/oneplayce
 
 # Setup OnePlayce database
