@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Setup REQUIRED SOFTWARE for OnePlayce
+sudo add-apt-repository -y ppa:kirillshkrogalev/ffmpeg-next
+sudo apt-get update
+sudo apt-get install -y ffmpeg
+
 # Copy OnePlayce VirtualHost
 sudo cp -fRv /vagrant/conf/sites-available/oneplayce.conf /etc/apache2/sites-available/
 
@@ -10,6 +15,7 @@ sudo a2ensite oneplayce.conf
 sudo service apache2 reload
 
 # Install composer packages
+sudo composer self-update
 sudo composer global require "fxp/composer-asset-plugin:~1.0.3" --no-progress
 sudo composer install --prefer-dist --no-progress --no-interaction --working-dir /var/sites/oneplayce
 
