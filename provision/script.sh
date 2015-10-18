@@ -31,7 +31,13 @@ sudo echo "xdebug.idekey = 'vagrant'" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 sudo echo "xdebug.remote_port = 9000" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 
 
+sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 35M/' /etc/php5/apache2/php.ini
 
+sed -i 's/memory_limit = 128M/memory_limit = 512M/' /etc/php5/apache2/php.ini
+
+sed -i 's/post_max_size = 8M/post_max_size = 35M/' /etc/php5/apache2/php.ini
+
+sed -i 's/expose_php = On/expose_php = Off/' /etc/php5/apache2/php.ini
 sed -i 's/expose_php = On/expose_php = Off/' /etc/php5/cli/php.ini
 
 # Restart apache2 to get new PHP configuration
