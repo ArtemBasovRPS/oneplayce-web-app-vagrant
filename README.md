@@ -14,4 +14,9 @@
 4. Update OnePlayce module `git submodule update` 
 5. Vagrant Up `vagrant up`
 
-The website will be available at http://oneplayce.le
+### OR
+
+Just download `shell/deploy.sh` file, make it executable and run in needed folder.
+
+---
+The website will be available by http://oneplayce.le URL
