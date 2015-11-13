@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Password is required to update hosts file."
-sudo printf $'\e[32mOnePlayce vagrant deployment is \e[1mSTARTED\e[0m ['
+printf $'\e[32mOnePlayce vagrant deployment is \e[1mSTARTED\e[0m ['
 printf "$(date)"
 printf $']'
 echo
