@@ -30,5 +30,8 @@ sudo cp -n /var/sites/oneplayce/config/params-local-sample.php /var/sites/onepla
 # Migrate database
 php /var/sites/oneplayce/yii migrate --interactive=0
 
+# Setup RBAC
+php /var/sites/oneplayce/yii rbac/init --interactive=0
+
 # Notify user to setup correct social API keys for project
 cat /vagrant/misc/social-api-keys-warning 
