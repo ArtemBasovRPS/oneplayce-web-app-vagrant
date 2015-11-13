@@ -13,14 +13,14 @@ git checkout -t origin/master
 git submodule init
 git submodule update
 
-echo "Do you wish to switch project branch to *develop*?"
+# Select deployment branch before `vagrant up`
+echo "Do you wish to switch project branch to 'develop'?"
 select yn in "Yes" "No"; do
-    case $yn in
+    case $REPLY in
         Yes ) cd sites/oneplayce; git checkout -b origin/develop; cd ../..; break;;
          No ) exit;;
     esac
 done
-
 
 vagrant up
 rm deploy.sh
