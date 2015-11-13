@@ -13,7 +13,7 @@ git checkout -t origin/master
 git submodule init
 git submodule update
 
-echo "Do you wish to switch project branch to `develop`?"
+echo "Do you wish to switch project branch to *develop*?"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) cd sites/oneplayce; git checkout -b origin/develop; cd ../..; break;;
