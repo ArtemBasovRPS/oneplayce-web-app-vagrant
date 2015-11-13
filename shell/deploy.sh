@@ -17,7 +17,7 @@ git submodule update
 echo "Do you wish to switch project branch to 'develop'?"
 select yn in "Yes" "No"; do
     case $REPLY in
-        Yes ) cd sites/oneplayce; git checkout -b origin/develop; cd ../..; break;;
+        Yes ) cd sites/oneplayce; git fetch; git checkout develop; cd ../..; break;;
          No ) exit;;
     esac
 done
