@@ -12,6 +12,16 @@ git fetch
 git checkout -t origin/master
 git submodule init
 git submodule update
+
+echo "Do you wish to switch project branch to `develop`?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) cd sites/oneplayce; git checkout -b origin/develop; cd ../..; break;;
+         No ) exit;;
+    esac
+done
+
+
 vagrant up
 rm deploy.sh
 printf $'\e[32mOnePlayce vagrant deployment is \e[1mFINISHED\e[0m ['
