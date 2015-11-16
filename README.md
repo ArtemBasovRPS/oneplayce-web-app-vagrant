@@ -16,7 +16,9 @@
 
 ### OR
 
-Just download `shell/deploy.sh` file, make it executable and run in needed folder.
+Just download `shell/deploy.sh` file, make it executable and run in project folder.
+
+`curl -O "https://raw.githubusercontent.com/SergeyKuzmich/oneplayce-scotch-box/master/shell/deploy.sh" && chmod 777 deploy.sh && ./deploy.sh`
 
 ---
 The website will be available by http://oneplayce.le URL
