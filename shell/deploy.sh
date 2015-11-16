@@ -6,7 +6,7 @@ printf $']'
 echo
 vagrant plugin install vagrant-hostmanager
 git init
-git remote add origin git@github.com:SergeyKuzmich/oneplayce-scotch-box.git
+git remote add origin git@github.com:SergeyKuzmich/oneplayce-web-app-vagrant.git
 git fetch
 git checkout -t origin/master
 git submodule init
