@@ -9,11 +9,9 @@ Vagrant.configure("2") do |config|
     config.hostmanager.include_offline = false
 
     config.vm.define 'oneplayce.le' do |node|
-
         # Box
         node.vm.box = "scotch/box"
         node.vm.network "private_network", ip: "192.168.33.10"
-        node.vm.hostname = "scotchbox.le"
 
         # Sites
         node.vm.synced_folder "./sites", "/var/sites", 
@@ -28,8 +26,5 @@ Vagrant.configure("2") do |config|
 
         # OnePlayce 
         node.vm.provision "shell", path: "./provision/oneplayce.sh", keep_color: true
-
-        # Setup aliases
-        node.hostmanager.aliases = %w(oneplayce.le)
     end
 end
