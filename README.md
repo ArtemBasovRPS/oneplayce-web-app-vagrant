@@ -11,7 +11,7 @@
 2. `cd scotch-box`
 3. `vagrant plugin install vagrant-hostmanager`
 3. Init OnePlayce submodule `git submodule init` (Make sure you have access rights to read iggym4/OnePlayce-RPS-Backend repo)
-4. Update OnePlayce module `git submodule update` 
+4. Update OnePlayce module `git submodule update` [OPTIONAL: go to `sites/oneplayce` and switch branch to `develop`]
 5. Vagrant Up `vagrant up`
 
 ### OR
