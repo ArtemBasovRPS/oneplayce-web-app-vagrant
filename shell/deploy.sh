@@ -14,7 +14,7 @@ git submodule update
 
 # Select deployment branch before `vagrant up`
 echo "Do you wish to switch project branch to 'develop'?"
-select yn in "Yes" "No"; do
+select option in "Yes" "No"; do
     case $REPLY in
         Yes ) cd sites/oneplayce; git fetch; git checkout develop; cd ../..; break;;
          No ) exit;;
