@@ -10,9 +10,8 @@
 1. Clone this repository: `git clone git@github.com:SergeyKuzmich/oneplayce-web-app-vagrant.git`
 2. Go to repository folder: `cd oneplayce-web-app-vagrant`
 3. Install hostmanager: `vagrant plugin install vagrant-hostmanager`
-3. Init OnePlayce submodule: `git submodule init`  
+3. Get OnePlayce project: `git@github.com:iggym4/OnePlayce-RPS-Backend.git sites/oneplayce`  
    [*Make sure you have access rights to read* **iggym4/OnePlayce-RPS-Backend** *repository*]
-4. Update OnePlayce module: `git submodule update`  
    [**OPTIONAL**: Go to `sites/oneplayce` and switch branch to `develop`]
 5. Vagrant Up: `vagrant up`
 
