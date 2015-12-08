@@ -9,8 +9,7 @@ git init
 git remote add origin git@github.com:SergeyKuzmich/oneplayce-web-app-vagrant.git
 git fetch
 git checkout -t origin/master
-git submodule init
-git submodule update
+git clone git@github.com:iggym4/OnePlayce-RPS-Backend.git sites/oneplayce
 
 # Select deployment branch before `vagrant up`
 echo "Do you wish to switch project branch to 'develop'?"
