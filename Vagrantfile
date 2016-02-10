@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
     config.vm.define 'oneplayce-web-app' do |node|
         # Box
         node.vm.box = "scotch/box"
+        node.vm.box_check_update = false
         node.vm.network "private_network", ip: "192.168.33.10"
 
         # Sites
