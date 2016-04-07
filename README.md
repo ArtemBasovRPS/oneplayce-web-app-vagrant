@@ -19,7 +19,9 @@
 
 Just download `shell/deploy.sh` file, make it executable and run in project folder.
 
-`curl -O "https://raw.githubusercontent.com/SergeyKuzmich/oneplayce-web-app-vagrant/master/shell/deploy.sh" && chmod 777 deploy.sh && ./deploy.sh`
+### OR
+
+`curl -sL https://raw.githubusercontent.com/SergeyKuzmich/oneplayce-web-app-vagrant/master/shell/develop.sh | bash -` - to get actual develop environment.
 
 ---
-The website will be available by http://oneplayce.le URL
+The website will be available by http://oneplayce.le
