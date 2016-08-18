@@ -15,8 +15,6 @@ sudo rm /etc/php5/apache2/conf.d/user.ini
 sudo service apache2 stop
 sudo rm /etc/apache2/sites-enabled/*
 sudo cp -fRv /vagrant/conf/apache2.conf /etc/apache2/apache2.conf
-sudo cp -fRv /vagrant/conf/sites-available/default.conf /etc/apache2/sites-available/
-sudo a2ensite default.conf
 sudo service apache2 start
 
 
