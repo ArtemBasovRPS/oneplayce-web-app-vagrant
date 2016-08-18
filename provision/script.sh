@@ -29,7 +29,10 @@ sudo echo "xdebug.remote_enable = on" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 sudo echo "xdebug.remote_connect_back = on" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 sudo echo "xdebug.idekey = 'vagrant'" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 sudo echo "xdebug.remote_port = 9000" >> /etc/php5/apache2/conf.d/20-xdebug.ini
+sudo echo "xdebug.default_enable=1" >> /etc/php5/apache2/conf.d/20-xdebug.ini
+sudo echo "xdebug.remote_host=10.0.2.2" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 
+sudo echo 'export XDEBUG_CONFIG="idekey=PHPSTORM"' >> /home/vagrant/.bashrc
 
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 35M/' /etc/php5/apache2/php.ini
 
