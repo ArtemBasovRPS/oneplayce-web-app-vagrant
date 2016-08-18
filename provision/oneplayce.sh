@@ -15,9 +15,9 @@ sudo a2ensite oneplayce.conf
 sudo service apache2 reload
 
 # Install composer packages
-sudo composer self-update
-sudo composer global require "fxp/composer-asset-plugin:~1.1.1" --no-progress
-sudo composer install --prefer-dist --no-progress --no-interaction --working-dir /var/sites/oneplayce
+sudo composer self-update --no-plugins
+sudo composer global require "fxp/composer-asset-plugin:~1.1.1" --no-progress --no-plugins
+sudo composer install --prefer-dist --no-progress --no-plugins --no-interaction --working-dir /var/sites/oneplayce
 
 # Setup OnePlayce database
 cat /vagrant/database/oneplayce.sql | mysql -uroot -proot
@@ -26,6 +26,8 @@ sed -i 's/db_name/oneplayce/;s/db_user/oneplayceu/;s/db_pass/oneplaycep/' /var/s
 
 # Setup required local configurations
 sudo cp -n /var/sites/oneplayce/config/params-local-sample.php /var/sites/oneplayce/config/params-local.php
+
+sudo echo 'export PHP_IDE_CONFIG="serverName=OnePlayce Console Debug"' >> /home/vagrant/.bashrc
 
 # Migrate database
 php /var/sites/oneplayce/yii migrate --interactive=0
