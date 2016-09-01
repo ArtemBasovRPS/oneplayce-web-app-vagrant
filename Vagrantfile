@@ -29,6 +29,6 @@ Vagrant.configure("2") do |config|
         node.vm.provision "shell", path: "./provision/oneplayce.sh", keep_color: true
         
         # Setup aliases
-         node.hostmanager.aliases = %w(oneplayce.le)
+        node.hostmanager.aliases = %w(oneplayce.le service.oneplayce.le)
     end
 end

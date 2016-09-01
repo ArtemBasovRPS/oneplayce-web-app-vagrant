@@ -7,17 +7,19 @@ sudo apt-get install -y ffmpeg
 
 # Copy OnePlayce VirtualHost
 sudo cp -fRv /vagrant/conf/sites-available/oneplayce.conf /etc/apache2/sites-available/
+sudo cp -fRv /vagrant/conf/sites-available/service.oneplayce.conf /etc/apache2/sites-available/
 
 # Enable OnePlayce VirtualHost
 sudo a2ensite oneplayce.conf
+sudo a2ensite service.oneplayce.conf
 
 # Reload apache to catch OnePlayce VirtualHost
 sudo service apache2 reload
 
 # Install composer packages
-sudo composer self-update --no-plugins
-sudo composer global require "fxp/composer-asset-plugin:~1.1.1" --no-progress --no-plugins
-sudo composer install --prefer-dist --no-progress --no-plugins --no-interaction --working-dir /var/sites/oneplayce
+sudo composer self-update
+sudo composer global require "fxp/composer-asset-plugin:~1.1.1" --no-progress
+sudo composer install --prefer-dist --no-progress --no-interaction --working-dir /var/sites/oneplayce
 
 # Setup OnePlayce database
 cat /vagrant/database/oneplayce.sql | mysql -uroot -proot
