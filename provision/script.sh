@@ -1,11 +1,5 @@
 #!/bin/sh
 
-sudo apt-get install -y --force-yes language-pack-en-base
-
-locale-gen en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 
 # Setup locales
@@ -21,6 +15,8 @@ sudo rm /etc/php/7.0/apache2/conf.d/user.ini
 sudo service apache2 stop
 sudo rm /etc/apache2/sites-enabled/*
 sudo rm /etc/apache2/sites-available/scotchbox.local.conf
+sudo mkdir /var/www/public
+sudo touch /var/www/public/index.html
 sudo a2ensite 000-default.conf
 sudo cp -fRv /vagrant/conf/apache2.conf /etc/apache2/apache2.conf
 sudo service apache2 start
