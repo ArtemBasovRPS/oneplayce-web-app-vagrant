@@ -23,10 +23,10 @@ Vagrant.configure("2") do |config|
         node.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
         # Running common provision
-        node.vm.provision "shell", path: "./provision/script.sh"#, keep_color: true
+        node.vm.provision "shell", path: "./provision/script.sh", keep_color: true
 
         # OnePlayce 
-        node.vm.provision "shell", path: "./provision/oneplayce.sh"#, keep_color: true
+        node.vm.provision "shell", path: "./provision/oneplayce.sh", keep_color: true
         
         # Setup aliases
         node.hostmanager.aliases = %w(oneplayce.le service.oneplayce.le)
