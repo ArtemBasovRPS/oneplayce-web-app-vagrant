@@ -23,10 +23,10 @@ sudo service apache2 start
 
 
 # APC
-sudo apt-get install -y php5-apcu
+sudo apt-get install -y --force-yes php5-apcu
 
 # XDebug
-sudo apt-get install -y php5-xdebug
+sudo apt-get install -y --force-yes php5-xdebug
 sudo echo "xdebug.remote_enable = on" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 sudo echo "xdebug.remote_connect_back = on" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 sudo echo "xdebug.idekey = 'vagrant'" >> /etc/php5/apache2/conf.d/20-xdebug.ini

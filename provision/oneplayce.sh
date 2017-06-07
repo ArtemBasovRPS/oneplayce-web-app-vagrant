@@ -3,7 +3,7 @@
 # Setup REQUIRED SOFTWARE for OnePlayce
 sudo add-apt-repository -y ppa:kirillshkrogalev/ffmpeg-next
 sudo apt-get update
-sudo apt-get install -y ffmpeg
+sudo apt-get install -y --force-yes ffmpeg
 
 # Copy OnePlayce VirtualHost
 sudo cp -fRv /vagrant/conf/sites-available/oneplayce.conf /etc/apache2/sites-available/
