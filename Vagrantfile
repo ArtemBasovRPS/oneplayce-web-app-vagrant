@@ -28,6 +28,9 @@ Vagrant.configure("2") do |config|
 
         # OnePlayce 
         node.vm.provision "shell", path: "./provision/oneplayce.sh", keep_color: true
+
+        # Run a script at every boot
+        node.vm.provision :shell, path: "./provision/vagrant-start.sh", run: "always", privileged: true
         
         # Setup aliases
         node.hostmanager.aliases = %w(oneplayce.le service.oneplayce.le)
