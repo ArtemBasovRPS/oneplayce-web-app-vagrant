@@ -1,5 +1,8 @@
 #!/bin/sh
 
+sudo rm /etc/apt/sources.list.d/ondrej-php5-5_6-trusty.list
+sudo add-apt-repository -y ppa:ondrej/php
+
 sudo apt-get update
 
 # Setup locales
@@ -26,7 +29,7 @@ sudo service apache2 start
 sudo apt-get install -y --force-yes php5-apcu
 
 # XDebug
-sudo apt-get install -y --force-yes php5-xdebug
+sudo apt-get install -y --force-yes php5.6 php-xdebug
 sudo echo "xdebug.remote_enable = on" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 sudo echo "xdebug.remote_connect_back = on" >> /etc/php5/apache2/conf.d/20-xdebug.ini
 sudo echo "xdebug.idekey = 'vagrant'" >> /etc/php5/apache2/conf.d/20-xdebug.ini
